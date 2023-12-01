@@ -20,7 +20,6 @@ import pz from './assets/textures/pz.jpg'
 import nz from './assets/textures/nz.jpg'
 import AudioManager from './AudioManager';
 import { getRandomInt } from './assets/libs/math';
-import { point } from 'cli-spinners';
 
 export default function SceneManager( canvas )
 {
@@ -100,8 +99,8 @@ export default function SceneManager( canvas )
     shuffleComposer.push( dotScreenpass, rgbShiftPass, unrealBloomPass, afterImage, glitchPass )
 
     // FPS panel
-    const stats = new Stats( );
-    document.body.appendChild( stats.dom );
+    // const stats = new Stats( );
+    // document.body.appendChild( stats.dom );
 
     // GUI
     const gui = buildGui( );
@@ -186,7 +185,7 @@ export default function SceneManager( canvas )
     function buildRender( { width, height } )
     {
         const renderer = new THREE.WebGLRenderer( { canvas: canvas, antialias: true, alpha: true } );
-        renderer.outputEncoding = THREE.sRGBEncoding;
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
 
         const DPR = Math.min( devicePixelRatio, 2 )
         renderer.setPixelRatio( DPR );
@@ -219,7 +218,7 @@ export default function SceneManager( canvas )
 
     this.update = function( )
     {
-        stats.begin( );
+        // stats.begin( );
         const elapsedTime = clock.getElapsedTime( );
         for ( let i = 0; i < sceneSubjects.length; i++ )
         {
@@ -233,7 +232,7 @@ export default function SceneManager( canvas )
             rgbShiftPass.uniforms.angle.value = elapsedTime * .3;
         }
         composer.render( );
-        stats.end( )
+        // stats.end( )
     }
 
     this.onWindowResize = function( )

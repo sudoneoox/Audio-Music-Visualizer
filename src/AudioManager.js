@@ -8,7 +8,6 @@ export default function AudioManager( )
         audioBuffer: undefined,
         cameraPaused: false,
         automaticSwitchingOn: true,
-        songBPM: null,
         audioBuffer: null,
         audioAnalyser: null,
         audioContext: null,
@@ -64,8 +63,8 @@ export default function AudioManager( )
             }, function( e ) { "Error with decoding audio data" + e.err; } );
         };
         freader.readAsArrayBuffer( file );
-        const texttochange = document.querySelector( '#top' );
-        texttochange.innerHTML = 'Press H for even more fun!'
+        // const texttochange = document.querySelector( '#top' );
+        texttochange.innerHTML = '(H): Effects Menu'
         const fileinput = document.querySelector( '#filemp3' )
         fileinput.style.visibility = "hidden";
         texttochange.style.top = "95.5%"
