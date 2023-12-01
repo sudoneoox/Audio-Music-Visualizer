@@ -1,15 +1,14 @@
-<h1> Audio Music Visualizer </h1>
+# Audio Music Visualizer
 
-<h3>Installation Guide</h3>
-- Download the source and unzip the folder
-``` bash
+### Installation Guide
+Download the source and unzip the folder
+```bash
  npm i 
  npm update
  npm run dev
 ```
+A local server should start on your computer now jsut go to the localhost port on your browser and you should see the demo
 
-
-
-<h2> Demo Video </h2>
+## Demo Video
 https://github.com/sudoneoox/Audio-Music-Visualizer/assets/76002926/b7458eea-0236-4da2-a4ff-b65790d523be
 
